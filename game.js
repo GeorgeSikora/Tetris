@@ -451,19 +451,9 @@ class GameField {
     // add new random shape to the game
     if (this.addShape(this.nextShape)) { // TRUE = no space for new shape
       // new shape collided, game ended
-
-      var data = {
-        name: player_name,
-        score: this.score,
-				duration: int(millis()/1000)
-      };
-      socket.emit('new-score',data);
-			
 			document.getElementById("score-input").value = field.score;
 			document.getElementById('endForm').submit()
-			
 			this.end = true;
-			
 			return;
     }
 

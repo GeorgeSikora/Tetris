@@ -15,23 +15,7 @@ function setup() {
 
   /* new GameField(rows, columns); */
   field = new GameField(18, 10);
-
-	console.log("your name is: " + player_name);
-
-  socket = io.connect('185.221.124.205:3031', {
-    reconnection: false
-  });
 }
-
-setInterval(function(){ 
-
-  var data = {
-    cells: field.cells
-  };
-  
-  socket.emit('cells', data);
-  
-}, 250);
 
 
 // Timers
@@ -61,28 +45,6 @@ function draw() {
   strokeWeight(1);
   drawMiniShape(width-28, 30, field.nextShape, 12);
 
-  /* Draw end */
-
-  if (field.end) {
-		/*
-    noStroke();
-    fill(0, 235);
-    rect(0, 0, width, height);
-
-    fill(255, 200, 120);
-    textAlign(CENTER, CENTER);
-
-    textSize(82);
-    text("GAME\nOVER", width/2, height/4);
-
-    textSize(30);
-    text("score: " + field.score, width/2, height/2);
-
-    textSize(16);
-    text("Press <enter> key to restart", width/2, height-30);
-		*/
-  }
-
   /* Speed up key */
   if (keyIsDown(83)) { // Key 'S'
     stepPeriod = SPEEDUP_STEP_PERIOD;
@@ -101,7 +63,6 @@ function draw() {
   }
 
   /* Key pressing timer */
-
   if (keyPressTimer + 100 < millis()) {
     keyPressTimer = millis();
     if (keyPress) { 
