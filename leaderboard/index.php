@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<title>Game over</title>
 	<?php header('Content-type: text/html; charset=utf-8'); ?>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
