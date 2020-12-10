@@ -1,0 +1,340 @@
+
+body {
+	margin: 0;
+	background-image: url("images/wallpaper.png");
+	
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+
+#content {
+	width: 55%;
+	background-color:rgba(0.1, 0.1, 0.1, 0.95);
+	box-shadow: 0 0 40px 80px rgba(0.1, 0.1, 0.1, 0.95);
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+  color: #ddd;
+  text-align: center;
+  font-size:32px;
+}
+
+.title p {
+  margin: 6px;
+  font-family: "Lucida Console";
+}
+
+.logo {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45vh;
+}
+
+.input-play {
+  margin: auto;
+  width: 50vh;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  color: #333;
+  font-size: 18px;
+  border: none;
+
+  width: 100%;
+  padding: 8px 20px;
+  margin: 0px 0px;
+  background-color: #ccc;
+  outline: none;
+
+  border-radius: 5px 0px 0px 5px;
+}
+
+input:focus {
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,1);
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,1);
+
+  background-color: #ddd;
+}
+
+.play-button {
+  display: inline-block;
+	
+	width: 128px;
+	height: 42px;
+
+  background-color: #3b963e; /* Green */
+
+  outline: none;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+
+  text-decoration: none;
+
+  font-family: arial;
+  font-size: 18px;
+
+  color:black;
+  text-align: center;
+}
+
+.play-button:hover {
+  background-color: #317033; /* Green */
+  color: #eee;
+}
+
+.error-message {
+	color: red;
+	text-align: center;
+	font-size: 22px;
+	font-family: Arial;
+}
+
+.players-played {
+	color: #888;
+	text-align: center;
+	font-size: 22px;
+	font-family: Arial;
+}
+
+.player-score {
+	color: #afc1f2;
+	text-align: center;
+	font-size: 48px;
+	font-family: Arial;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.player-rank {
+	color: #ccc;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial;
+}
+.player-place {
+	color: #fff;
+	font-size: 26px;
+}
+
+.input-play-again{
+	text-align: center;
+}
+
+.play-again-button {
+  display: inline-block;
+	
+	width: 128px;
+	height: 42px;
+
+  background-color: #3b963e; /* Green */
+
+  outline: none;
+  border: none;
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  font-family: arial;
+  font-size: 18px;
+
+  color:black;
+  text-align: center;
+}
+
+.play-again-button:hover {
+  background-color: #317033; /* Green */
+  color: #eee;
+}
+
+
+/********** SCORE LEADERBOARD **********/
+
+
+/* title */
+
+.title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title p {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #ccc;
+  font-family: "Lucida Console";
+}
+
+.title hr {
+  width: 80vh;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.score-table {
+  display: table; 
+  width: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  font-family: monospace;
+  font-weight: normal;
+  display: table-row;
+
+  position: relative;
+  font-size: 22px;
+  width: 100%;
+  border-bottom: 1px solid #555;
+  color: #aaa;
+}
+
+.name {
+  width: 65%;
+	
+  display: inline-block;
+  position: relative;
+
+  text-align: left;
+  line-height: 45px;
+}
+
+.score {
+  width: 20%;
+	
+  display: inline-block;
+  position: relative;
+
+  font-family: arial;
+  text-align: right;
+}
+
+
+.duration {
+  width: 15%;
+	
+  display: inline-block;
+  position: relative;
+
+  font-family: arial;
+  text-align: right;
+  color: #999;
+  font-size: 18px;
+}
+
+
+.first-page.row:nth-child(1) {
+  color: gold;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.first-page.row:nth-child(2) {
+  color: #c0c0c0;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.first-page.row:nth-child(3) {
+  color: #cd7f32;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+/*************** TEXT FORMAT ***************/
+
+.middle-text {
+	color: #ddd;
+	font-size: 24px;
+  font-family: "Lucida Console";
+}
+
+.small-text {
+	color: #ccc;
+	font-size: 16px;
+  font-family: "Lucida Console";
+}
+
+li {
+	margin: 10px;
+}
+
+/*************** PAGINATION ***************/
+
+.center {
+	text-align: center;
+}
+
+.pagination {
+	padding: 25px;
+  display: inline-block;
+}
+	
+.pagination a {
+  float: left;
+	width: 20px;
+	text-align: center;
+	
+  color: #fff;
+	background-color: #1a1a1a;
+	
+  padding: 8px 16px;
+	
+	margin: 4px;
+	
+  text-decoration: none;
+  transition: background-color .2s;
+	
+	border-radius: 5px;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}	
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+	color: #000;
+}
+
+
+/* SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

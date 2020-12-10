@@ -1,0 +1,56 @@
+
+	<div class="title"><p>Game Over!</p></div>
+
+	<p class="player-score">Skóre: <?php echo $_POST['score'];?></p>
+	
+	<?php
+	
+		$name = $_POST['name'];
+				
+							/* determine number of rows result set */
+							$success = 0;
+							do {
+							
+									$mysqli = new mysqli("185.221.124.205", "user", "", "tetris");
+	
+									$sql = "with temp as (
+											select name, row_number() over (order by score desc) as rownum
+											from leaderboard
+									)
+									select rownum from temp where name = '$name'";
+							
+								if ($result = $mysqli->query($sql)) {
+								
+									
+								
+									if($fetch = $result->fetch_assoc()){
+									
+										$place = $fetch['rownum'];
+									
+										//echo "Done!";
+										$success = 1;
+										
+									} else {
+									
+										//echo "error";
+									}
+								}
+							} while($success == 0);
+					
+				if ($result = $mysqli->query("SELECT ROW_NUMBER() OVER (ORDER BY score) AS RowNr FROM leaderboard")) {
+						/* determine number of rows result set */
+						$row_cnt = $result->num_rows;
+				}
+				
+				$mysqli->close();
+        
+    ?> 
+	
+	<p class="player-rank">v tabulce jsi na<br><b class="player-place"><?php echo"$place"?>. místě</b> z <?php echo"$row_cnt"?> hráčů</p>
+
+	
+	<form class="input-play-again" name="play-form" action="/tetris/index.php" method="post">
+			<input type="hidden" id="name" name="player_name" placeholder="jméno nebo přezdívka" autocomplete="off" value="<?php echo $_POST['name'];?>"></input>
+			<button class="play-again-button" type="submit">Hrát znova</button>
+	</form>
+	
