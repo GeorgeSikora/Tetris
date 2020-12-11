@@ -15,10 +15,7 @@
 	<img class="logo" src="images/tetris_logo.png">
 	
 	<?php if(isset($_POST['score'])) include("score.php"); else header("location: ../") ?>
-
-	<br>
-	<br>
-
+	
 </div>
 
 </body>
